@@ -1,0 +1,337 @@
+{
+  "execution_info": {
+    "execution_time_minutes": 3.628805037339528,
+    "execution_time_hours": 0.060480083955658806,
+    "timestamp": "2026-01-14T16:33:58.441791",
+    "configuration": {
+      "project": {
+        "name": "Software-Based PPSDG Course Project",
+        "academic_level": "5_ECTS_course"
+      },
+      "simulation": {
+        "n_consumers": 150,
+        "simulation_days": 7,
+        "attack_ratio": 0.05
+      },
+      "network": {
+        "simulation_mode": "mathematical",
+        "attack_types": [
+          "dos_syn_flood",
+          "port_scan",
+          "modbus_attack"
+        ],
+        "n_samples_per_type": 100
+      },
+      "privacy": {
+        "epsilon": 1.0,
+        "delta": 1e-05,
+        "mechanism": "laplace"
+      },
+      "federation": {
+        "n_clients": 3,
+        "model_type": "random_forest",
+        "num_rounds": 3,
+        "apply_privacy": true
+      },
+      "evaluation": {
+        "save_results": true,
+        "create_visualizations": true,
+        "output_directory": "/home/azureuser/aareas/software_course_results"
+      }
+    }
+  },
+  "pipeline_results": {
+    "smart_grid_data": {
+      "total_samples": 25200,
+      "attack_samples": 1260,
+      "normal_samples": 23940,
+      "consumer_types": {
+        "residential": 18816,
+        "commercial": 5376,
+        "industrial": 1008
+      },
+      "attack_types": {
+        "false_data_injection": 519,
+        "load_altering_attack": 364,
+        "voltage_manipulation": 180,
+        "frequency_attack": 146,
+        "meter_tampering": 51
+      }
+    },
+    "network_data": {
+      "total_samples": 5949378,
+      "attack_samples": 3966252,
+      "attack_types": {
+        "dos_syn_flood": 2788988,
+        "normal": 1983126,
+        "modbus_attack": 1176098,
+        "port_scan": 1166
+      },
+      "severity_distribution": {
+        "high": 2788988,
+        "none": 1983126,
+        "critical": 1176098,
+        "medium": 1166
+      }
+    },
+    "privacy_results": {
+      "mae": 105.45909863681108,
+      "rmse": 222.15065609469139,
+      "mean_relative_error": 0.008019152577733293,
+      "std_relative_error": 1.498159216572764,
+      "utility_preservation": 0.009393278853614333,
+      "privacy_cost_epsilon": 1.0,
+      "privacy_parameter_delta": 1e-05
+    },
+    "federated_results": {
+      "total_rounds": 3,
+      "successful_rounds": 3,
+      "success_rate": 1.0,
+      "final_accuracy": 0.9507936507936506,
+      "convergence_trend": [
+        0.9509920634920634,
+        0.9507936507936509,
+        0.9507936507936506
+      ],
+      "privacy_preserved": true,
+      "round_results": [
+        {
+          "participating_clients": 3,
+          "aggregation_success": true,
+          "average_local_accuracy": 0.9509920634920634,
+          "total_data_points": 25200,
+          "average_privacy_budget": 1.2301771472602185,
+          "global_weights": [
+            0.20776345266329352,
+            0.20250267531185528,
+            0.18752501933498805,
+            0.19291986183229826,
+            0.20928899085756486
+          ],
+          "client_results": [
+            {
+              "client_id": "client_0",
+              "local_accuracy": 0.9521428571428572,
+              "model_weights": [
+                0.21792899359752074,
+                0.20556195202304908,
+                0.1882784747342148,
+                0.17459161358820754,
+                0.21363896605700786
+              ],
+              "data_size": 8400,
+              "privacy_budget": 0.8048093880757382
+            },
+            {
+              "client_id": "client_1",
+              "local_accuracy": 0.9522619047619048,
+              "model_weights": [
+                0.21912566025700903,
+                0.20568956429411936,
+                0.1855661971007432,
+                0.19945528209922486,
+                0.1901632962489036
+              ],
+              "data_size": 8400,
+              "privacy_budget": 1.917569258606747
+            },
+            {
+              "client_id": "client_2",
+              "local_accuracy": 0.9485714285714286,
+              "model_weights": [
+                0.18623570413535084,
+                0.1962565096183974,
+                0.18873038617000626,
+                0.2047126898094624,
+                0.2240647102667832
+              ],
+              "data_size": 8400,
+              "privacy_budget": 0.9681527950981703
+            }
+          ]
+        },
+        {
+          "participating_clients": 3,
+          "aggregation_success": true,
+          "average_local_accuracy": 0.9507936507936509,
+          "total_data_points": 25200,
+          "average_privacy_budget": 1.2301771472602185,
+          "global_weights": [
+            0.20211579512368372,
+            0.20766863522924187,
+            0.2027681425646446,
+            0.18688838724748874,
+            0.200559039834941
+          ],
+          "client_results": [
+            {
+              "client_id": "client_2",
+              "local_accuracy": 0.9485714285714286,
+              "model_weights": [
+                0.20297129219330592,
+                0.20506042242408637,
+                0.20605315044213376,
+                0.1898083146671063,
+                0.19610682027336768
+              ],
+              "data_size": 8400,
+              "privacy_budget": 0.9681527950981703
+            },
+            {
+              "client_id": "client_1",
+              "local_accuracy": 0.9522619047619048,
+              "model_weights": [
+                0.19565985434661443,
+                0.1932720553625318,
+                0.22758309585198488,
+                0.193406868641833,
+                0.19007812579703598
+              ],
+              "data_size": 8400,
+              "privacy_budget": 1.917569258606747
+            },
+            {
+              "client_id": "client_0",
+              "local_accuracy": 0.9515476190476191,
+              "model_weights": [
+                0.20771623883113094,
+                0.22467342790110745,
+                0.17466818139981516,
+                0.17744997843352706,
+                0.21549217343441934
+              ],
+              "data_size": 8400,
+              "privacy_budget": 0.8048093880757382
+            }
+          ]
+        },
+        {
+          "participating_clients": 3,
+          "aggregation_success": true,
+          "average_local_accuracy": 0.9507936507936506,
+          "total_data_points": 25200,
+          "average_privacy_budget": 1.2301771472602185,
+          "global_weights": [
+            0.1981779938098157,
+            0.19871836411324798,
+            0.19152310697698538,
+            0.20644921110137432,
+            0.20513132399857642
+          ],
+          "client_results": [
+            {
+              "client_id": "client_1",
+              "local_accuracy": 0.9520238095238095,
+              "model_weights": [
+                0.19158927248739802,
+                0.19435033914523095,
+                0.20389846308046194,
+                0.2077721348792455,
+                0.20238979040766353
+              ],
+              "data_size": 8400,
+              "privacy_budget": 1.917569258606747
+            },
+            {
+              "client_id": "client_2",
+              "local_accuracy": 0.9491666666666667,
+              "model_weights": [
+                0.19276559007681976,
+                0.2129161616412692,
+                0.1762093940488954,
+                0.20817504792262004,
+                0.2099338063103955
+              ],
+              "data_size": 8400,
+              "privacy_budget": 0.9681527950981703
+            },
+            {
+              "client_id": "client_0",
+              "local_accuracy": 0.9511904761904761,
+              "model_weights": [
+                0.21017911886522941,
+                0.18888859155324383,
+                0.19446146380159887,
+                0.20340045050225747,
+                0.2030703752776703
+              ],
+              "data_size": 8400,
+              "privacy_budget": 0.8048093880757382
+            }
+          ]
+        }
+      ]
+    },
+    "evaluation": {
+      "smart_grid_simulation": {
+        "data_quality_score": 0.6842105263157895,
+        "attack_diversity": 5,
+        "temporal_coverage": "1 week hourly data",
+        "realism_score": 0.85
+      },
+      "network_simulation": {
+        "attack_coverage": 4,
+        "protocol_diversity": "Multiple smart grid protocols covered",
+        "attack_sophistication": "APT and protocol-specific attacks included"
+      },
+      "privacy_preservation": {
+        "mae": 105.45909863681108,
+        "rmse": 222.15065609469139,
+        "mean_relative_error": 0.008019152577733293,
+        "std_relative_error": 1.498159216572764,
+        "utility_preservation": 0.009393278853614333,
+        "privacy_cost_epsilon": 1.0,
+        "privacy_parameter_delta": 1e-05
+      },
+      "federated_learning": {
+        "convergence_achieved": true,
+        "privacy_maintained": true,
+        "final_performance": 0.9507936507936506
+      },
+      "overall_assessment": {
+        "overall_score": 0.5481324853210182,
+        "data_quality_grade": "D (Pass)",
+        "privacy_grade": "F (Needs Improvement)",
+        "federated_grade": "A (Excellent)",
+        "course_project_grade": "F (Needs Improvement)",
+        "implementation_type": "100% Software-Based",
+        "hardware_requirements": "Standard laptop sufficient",
+        "academic_rigor": "Research-validated algorithms"
+      }
+    }
+  },
+  "course_project_summary": {
+    "project_title": "Software-Based Privacy-Preserving Synthetic Data Generation for Smart Grid Cybersecurity",
+    "implementation_approach": "100% Software-Based (No Hardware Dependencies)",
+    "execution_time_hours": 0.060480083955658806,
+    "data_generated": {
+      "smart_grid_samples": 25200,
+      "network_samples": 5949378,
+      "total_samples": 5974578
+    },
+    "privacy_metrics": {
+      "epsilon": 1.0,
+      "utility_preservation": 0.009393278853614333,
+      "privacy_mechanism": "Laplace Noise Mechanism"
+    },
+    "federated_learning": {
+      "success_rate": 1.0,
+      "final_accuracy": 0.9507936507936506,
+      "privacy_preserved": true
+    },
+    "technical_achievements": [
+      "Complete smart grid simulation without physical infrastructure",
+      "Network attack simulation replacing IXIA Perfect Storm",
+      "CPU-only machine learning (no GPU required)",
+      "Multi-threaded federated learning simulation",
+      "Mathematical differential privacy implementation",
+      "Comprehensive evaluation with academic metrics"
+    ],
+    "software_components": {
+      "cost": "$0 (100% open source)",
+      "hardware_requirements": "Standard laptop (8GB RAM minimum)",
+      "external_dependencies": "None (pure software implementation)",
+      "scalability": "Configurable for different course requirements"
+    }
+  }
+}

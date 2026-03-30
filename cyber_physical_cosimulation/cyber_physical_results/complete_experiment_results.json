@@ -1,0 +1,427 @@
+{
+  "experiment_info": {
+    "start_time": "2026-03-09T16:04:04.572248",
+    "config": {
+      "research_info": {
+        "project_title": "Cyber-Physical Co-Simulation for Smart Grid Security",
+        "subtitle": "Impact of Cyber-Induced False Data Injection on Solar-Rich Distribution Networks",
+        "institution": "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+        "department": "Lehrstuhl Informatik 7",
+        "execution_date": "2026-03-09T16:04:00.945271"
+      },
+      "power_system": {
+        "feeder_type": "ieee13",
+        "solar_penetration": 0.4,
+        "voltage_limits": {
+          "lower": 0.9,
+          "upper": 1.1
+        },
+        "enable_protection": true
+      },
+      "network": {
+        "base_delay_ms": 15,
+        "max_delay_ms": 75,
+        "packet_loss_rate": 0.02,
+        "telemetry_interval_s": 1.0,
+        "enable_attack_injection": true
+      },
+      "simulation": {
+        "duration_minutes": 2,
+        "time_step_s": 0.1,
+        "real_time_factor": 10,
+        "enable_logging": true
+      },
+      "experiments": {
+        "baseline_duration_s": 60,
+        "attack_start_time_s": 120,
+        "recovery_analysis_s": 180,
+        "repeat_scenarios": 1
+      },
+      "output": {
+        "results_directory": "./cyber_physical_results",
+        "generate_plots": true,
+        "save_datasets": true,
+        "create_report": true
+      }
+    },
+    "scenarios_tested": [
+      "voltage_destabilization",
+      "solar_generation_manipulation",
+      "frequency_deviation_attack",
+      "cascading_failure_induction",
+      "multi_vector_assault"
+    ],
+    "end_time": "2026-03-09T16:04:09.849642",
+    "total_duration_s": 5.277393102645874
+  },
+  "baseline_results": {
+    "voltage_profiles": [
+      {
+        "load_factor": 0.5,
+        "bus_voltages_pu": {
+          "0": 1.0,
+          "1": 0.9928078816632208,
+          "2": 0.9921969110463842,
+          "3": 0.9875709098691515,
+          "4": 0.9921683737700071,
+          "5": 1.0003392276658094,
+          "6": 0.9898010346401735,
+          "7": 0.9887911713720057,
+          "8": 0.9885492552458943,
+          "9": 0.9881125100345522,
+          "10": 0.9714162174390213,
+          "11": 0.9720621567280995,
+          "12": 0.9615092607191352
+        },
+        "min_voltage": 0.9615092607191352,
+        "max_voltage": 1.0003392276658094
+      },
+      {
+        "load_factor": 0.7,
+        "bus_voltages_pu": {
+          "0": 1.0,
+          "1": 0.992558401401537,
+          "2": 0.9919212927971581,
+          "3": 0.9856638323129157,
+          "4": 0.9918713950643683,
+          "5": 0.9984940761211896,
+          "6": 0.989425125938065,
+          "7": 0.9884068839391501,
+          "8": 0.9879951715819175,
+          "9": 0.9877149787680528,
+          "10": 0.9645621173278437,
+          "11": 0.9618196849162648,
+          "12": 0.9472622033195689
+        },
+        "min_voltage": 0.9472622033195689,
+        "max_voltage": 1.0
+      },
+      {
+        "load_factor": 0.8,
+        "bus_voltages_pu": {
+          "0": 1.0,
+          "1": 0.9924325718393201,
+          "2": 0.9917823695929002,
+          "3": 0.9847067658916763,
+          "4": 0.9917217830093854,
+          "5": 0.9975682402002821,
+          "6": 0.9892352699569108,
+          "7": 0.9882128377393263,
+          "8": 0.9877150141934024,
+          "9": 0.9875143076950129,
+          "10": 0.961097074755434,
+          "11": 0.9565979743470181,
+          "12": 0.9399900375682299
+        },
+        "min_voltage": 0.9399900375682299,
+        "max_voltage": 1.0
+      },
+      {
+        "load_factor": 1.0,
+        "bus_voltages_pu": {
+          "0": 1.0,
+          "1": 0.9921786007224417,
+          "2": 0.991502161375627,
+          "3": 0.982785389379794,
+          "4": 0.9914201797217614,
+          "5": 0.9957098696883682,
+          "6": 0.988851515738651,
+          "7": 0.9878207015108957,
+          "8": 0.9871480706554412,
+          "9": 0.9871089158057307,
+          "10": 0.9540879629426349,
+          "11": 0.9459392514466208,
+          "12": 0.9251265044996776
+        },
+        "min_voltage": 0.9251265044996776,
+        "max_voltage": 1.0
+      },
+      {
+        "load_factor": 1.2,
+        "bus_voltages_pu": {
+          "0": 1.0,
+          "1": 0.991921346826705,
+          "2": 0.9912186032441683,
+          "3": 0.9808540783087082,
+          "4": 0.9911152031917434,
+          "5": 0.9938423052923996,
+          "6": 0.9884620124140826,
+          "7": 0.987422814284954,
+          "8": 0.9865716905890978,
+          "9": 0.9866977650378779,
+          "10": 0.946969111144748,
+          "11": 0.934971746154795,
+          "12": 0.9098041185704139
+        },
+        "min_voltage": 0.9098041185704139,
+        "max_voltage": 1.0
+      }
+    ],
+    "power_flows": [
+      {
+        "load_factor": 0.5,
+        "total_load_mw": 0.1025,
+        "total_generation_mw": 0.075,
+        "line_loading_max": 276.6066116990087
+      },
+      {
+        "load_factor": 0.7,
+        "total_load_mw": 0.1435,
+        "total_generation_mw": 0.075,
+        "line_loading_max": 286.5262062389576
+      },
+      {
+        "load_factor": 0.8,
+        "total_load_mw": 0.164,
+        "total_generation_mw": 0.075,
+        "line_loading_max": 292.05648144160705
+      },
+      {
+        "load_factor": 1.0,
+        "total_load_mw": 0.205,
+        "total_generation_mw": 0.075,
+        "line_loading_max": 304.2197580774138
+      },
+      {
+        "load_factor": 1.2,
+        "total_load_mw": 0.24599999999999997,
+        "total_generation_mw": 0.075,
+        "line_loading_max": 317.8038357533951
+      }
+    ],
+    "solar_generation": [],
+    "system_losses": [],
+    "stability_metrics": []
+  },
+  "attack_results": {
+    "voltage_destabilization": {
+      "total_runs": 1,
+      "average_attacks_per_run": 1.0,
+      "average_success_rate": 1.0,
+      "total_voltage_violations": 1,
+      "instability_rate": 1.0,
+      "avg_detection_latency_s": 11.094944761763188,
+      "avg_recovery_time_s": 236.24994017079757,
+      "max_voltage_deviation": 0.25,
+      "detailed_runs": [
+        {
+          "run_number": 1,
+          "attack_vectors": 1,
+          "successful_attacks": 1,
+          "voltage_violations": 1,
+          "system_instability": 1,
+          "detection_latencies": [
+            11.094944761763188
+          ],
+          "recovery_times": [
+            236.24994017079757
+          ],
+          "max_voltage_deviation": 0.25
+        }
+      ]
+    },
+    "solar_generation_manipulation": {
+      "total_runs": 1,
+      "average_attacks_per_run": 1.0,
+      "average_success_rate": 1.0,
+      "total_voltage_violations": 0,
+      "instability_rate": 0.0,
+      "avg_detection_latency_s": 119.70720115680885,
+      "avg_recovery_time_s": NaN,
+      "max_voltage_deviation": 0.0,
+      "detailed_runs": [
+        {
+          "run_number": 1,
+          "attack_vectors": 1,
+          "successful_attacks": 1,
+          "voltage_violations": 0,
+          "system_instability": 0,
+          "detection_latencies": [
+            119.70720115680885
+          ],
+          "recovery_times": [],
+          "max_voltage_deviation": 0.0
+        }
+      ]
+    },
+    "frequency_deviation_attack": {
+      "total_runs": 1,
+      "average_attacks_per_run": 1.0,
+      "average_success_rate": 1.0,
+      "total_voltage_violations": 0,
+      "instability_rate": 1.0,
+      "avg_detection_latency_s": 2.3330246646392245,
+      "avg_recovery_time_s": NaN,
+      "max_voltage_deviation": 0.0,
+      "detailed_runs": [
+        {
+          "run_number": 1,
+          "attack_vectors": 1,
+          "successful_attacks": 1,
+          "voltage_violations": 0,
+          "system_instability": 1,
+          "detection_latencies": [
+            2.3330246646392245
+          ],
+          "recovery_times": [],
+          "max_voltage_deviation": 0.0
+        }
+      ]
+    },
+    "cascading_failure_induction": {
+      "total_runs": 1,
+      "average_attacks_per_run": 1.0,
+      "average_success_rate": 1.0,
+      "total_voltage_violations": 1,
+      "instability_rate": 1.0,
+      "avg_detection_latency_s": 7.624769073399253,
+      "avg_recovery_time_s": 147.11208097015148,
+      "max_voltage_deviation": 0.3999999999999999,
+      "detailed_runs": [
+        {
+          "run_number": 1,
+          "attack_vectors": 1,
+          "successful_attacks": 1,
+          "voltage_violations": 1,
+          "system_instability": 1,
+          "detection_latencies": [
+            7.624769073399253
+          ],
+          "recovery_times": [
+            147.11208097015148
+          ],
+          "max_voltage_deviation": 0.3999999999999999
+        }
+      ]
+    },
+    "multi_vector_assault": {
+      "total_runs": 1,
+      "average_attacks_per_run": 1.0,
+      "average_success_rate": 1.0,
+      "total_voltage_violations": 1,
+      "instability_rate": 1.0,
+      "avg_detection_latency_s": 21.298509698057224,
+      "avg_recovery_time_s": 155.4875019582879,
+      "max_voltage_deviation": 0.25,
+      "detailed_runs": [
+        {
+          "run_number": 1,
+          "attack_vectors": 1,
+          "successful_attacks": 1,
+          "voltage_violations": 1,
+          "system_instability": 1,
+          "detection_latencies": [
+            21.298509698057224
+          ],
+          "recovery_times": [
+            155.4875019582879
+          ],
+          "max_voltage_deviation": 0.25
+        }
+      ]
+    }
+  },
+  "performance_metrics": {
+    "voltage_stability_index": 0.85,
+    "system_resilience_score": 0.19999999999999996,
+    "attack_detection_effectiveness": 0.5,
+    "recovery_performance": 0.88
+  },
+  "stability_analysis": {
+    "critical_buses_identified": [
+      11,
+      12
+    ],
+    "voltage_margin_analysis": {
+      "0": {
+        "voltage_pu": 1.0,
+        "lower_margin": 0.09999999999999998,
+        "upper_margin": 0.10000000000000009,
+        "min_margin": 0.09999999999999998
+      },
+      "1": {
+        "voltage_pu": 0.9921786007224417,
+        "lower_margin": 0.09217860072244166,
+        "upper_margin": 0.1078213992775584,
+        "min_margin": 0.09217860072244166
+      },
+      "2": {
+        "voltage_pu": 0.991502161375627,
+        "lower_margin": 0.09150216137562694,
+        "upper_margin": 0.10849783862437312,
+        "min_margin": 0.09150216137562694
+      },
+      "3": {
+        "voltage_pu": 0.982785389379794,
+        "lower_margin": 0.08278538937979396,
+        "upper_margin": 0.1172146106202061,
+        "min_margin": 0.08278538937979396
+      },
+      "4": {
+        "voltage_pu": 0.9914201797217614,
+        "lower_margin": 0.09142017972176142,
+        "upper_margin": 0.10857982027823865,
+        "min_margin": 0.09142017972176142
+      },
+      "5": {
+        "voltage_pu": 0.9957098696883682,
+        "lower_margin": 0.09570986968836814,
+        "upper_margin": 0.10429013031163192,
+        "min_margin": 0.09570986968836814
+      },
+      "6": {
+        "voltage_pu": 0.988851515738651,
+        "lower_margin": 0.08885151573865102,
+        "upper_margin": 0.11114848426134905,
+        "min_margin": 0.08885151573865102
+      },
+      "7": {
+        "voltage_pu": 0.9878207015108957,
+        "lower_margin": 0.08782070151089572,
+        "upper_margin": 0.11217929848910435,
+        "min_margin": 0.08782070151089572
+      },
+      "8": {
+        "voltage_pu": 0.9871480706554412,
+        "lower_margin": 0.08714807065544117,
+        "upper_margin": 0.1128519293445589,
+        "min_margin": 0.08714807065544117
+      },
+      "9": {
+        "voltage_pu": 0.9871089158057307,
+        "lower_margin": 0.08710891580573066,
+        "upper_margin": 0.11289108419426941,
+        "min_margin": 0.08710891580573066
+      },
+      "10": {
+        "voltage_pu": 0.9540879629426349,
+        "lower_margin": 0.05408796294263485,
+        "upper_margin": 0.14591203705736522,
+        "min_margin": 0.05408796294263485
+      },
+      "11": {
+        "voltage_pu": 0.9459392514466208,
+        "lower_margin": 0.04593925144662081,
+        "upper_margin": 0.15406074855337926,
+        "min_margin": 0.04593925144662081
+      },
+      "12": {
+        "voltage_pu": 0.9251265044996776,
+        "lower_margin": 0.02512650449967757,
+        "upper_margin": 0.1748734955003225,
+        "min_margin": 0.02512650449967757
+      }
+    },
+    "cascading_failure_risk": "medium",
+    "protection_system_effectiveness": "high"
+  },
+  "synthetic_datasets": {
+    "datasets_generated": 3,
+    "total_samples": 3000,
+    "dataset_files": [
+      "synthetic_normal_operation_dataset.csv",
+      "synthetic_attack_patterns_dataset.csv",
+      "synthetic_mixed_scenarios_dataset.csv"
+    ]
+  }
+}

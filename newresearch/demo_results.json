@@ -1,0 +1,86 @@
+{
+  "demo_type": "Adaptive FDI Attack Learning Demo",
+  "timestamp": "2026-03-10T22:29:24.924140",
+  "results": [
+    {
+      "episode": 1,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 2,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 3,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 4,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 5,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 6,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 7,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 8,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 9,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    },
+    {
+      "episode": 10,
+      "learning_state": "exploration",
+      "detected": false,
+      "effectiveness": 0.020000000000000018,
+      "voltage_impact": 0.020000000000000018,
+      "knowledge_items": 1
+    }
+  ]
+}
