@@ -9,8 +9,8 @@ import pandas as pd
 import numpy as np
 
 
-# SimBench grid code — low-voltage rural grid, same category as the paper
-GRID_CODE = "1-LV-rural1--0-sw"
+# SimBench grid code — 44-bus LV semi-urban grid, matches paper's 43 metering points
+GRID_CODE = "1-LV-semiurb4--0-sw"
 
 
 def load_grid(grid_code: str = GRID_CODE) -> tuple:
@@ -63,7 +63,7 @@ def run_powerflow(net) -> bool:
 
 
 def print_grid_summary(net) -> None:
-    print(f"Grid: {GRID_CODE}")
+    print(f"Grid: {net['name'] if 'name' in net else GRID_CODE}")
     print(f"  Buses        : {len(net.bus)}")
     print(f"  Lines        : {len(net.line)}")
     print(f"  Loads        : {len(net.load)}")
